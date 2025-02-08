@@ -1,0 +1,185 @@
+/* styles.css */
+:root {
+  --primary-bg-light: #f4f4f4;
+  --secondary-bg-light: #ffffff;
+  --text-light: #333;
+  --button-bg-light: #28a745;
+  --delete-bg-light: #dc3545;
+
+  --primary-bg-dark: #1e1e1e;
+  --secondary-bg-dark: #2c2c2c;
+  --text-dark: #fff;
+  --button-bg-dark: #32cd32;
+  --delete-bg-dark: #ff4d4d;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background 0.5s ease-in-out;
+}
+
+/* Light and Dark Mode Background */
+body.light {
+  background: linear-gradient(
+    135deg,
+    var(--primary-bg-light),
+    var(--secondary-bg-light)
+  );
+}
+
+body.dark {
+  background: linear-gradient(
+    135deg,
+    var(--primary-bg-dark),
+    var(--secondary-bg-dark)
+  );
+}
+
+/* Container Styling */
+.container {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 400px;
+  transition: 0.3s;
+}
+
+body.dark .container {
+  background: rgba(50, 50, 50, 0.4);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Titles */
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Light and Dark Mode Text */
+body.light h1,
+body.light h2 {
+  color: var(--text-light);
+}
+
+body.dark h1,
+body.dark h2 {
+  color: var(--text-dark);
+}
+
+/* Input & Button */
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 8px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+body.dark .input-container {
+  background: rgba(50, 50, 50, 0.6);
+}
+
+button {
+  background: var(--button-bg-light);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+body.dark button {
+  background: var(--button-bg-dark);
+}
+
+/* Todo List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  max-height: 300px; /* Limit height */
+  overflow-y: auto; /* Enable scrolling */
+  transition: 0.3s;
+}
+
+/* Todo Item */
+li {
+  background: rgba(255, 255, 255, 0.3);
+  margin: 8px 0;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+/* Fixed Text Color for Dark Mode */
+body.dark li {
+  background: rgba(50, 50, 50, 0.5);
+  color: white; /* Ensures text is visible in dark mode */
+}
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  background: transparent;
+  color: inherit; /* Inherit color from the parent */
+}
+
+/* Dark Mode Input Field Text Color */
+body.dark input {
+  color: white; /* Change text color to white */
+}
+
+/* Delete Button */
+li button {
+  background: var(--delete-bg-light);
+}
+
+li button:hover {
+  background: var(--delete-bg-dark);
+}
+
+body.dark li button {
+  background: var(--delete-bg-dark);
+}
+
+/* Toggle Mode Button */
+.toggle-mode {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.toggle-mode:hover {
+  transform: scale(1.1);
+}
