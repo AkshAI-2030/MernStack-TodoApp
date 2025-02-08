@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./index.css";
 
-const API_URL = "http://localhost:5000/todos";
+const API_URL = "https://mern-stack-todo-app-ten.vercel.app/todos";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
