@@ -19,7 +19,7 @@ const TodoSchema = new mongoose.Schema({
 const Todo = mongoose.model("Todo", TodoSchema);
 
 app.get("/todos", async (req, res) => {
-  const todos = await Todo.find().sort({ createdAt: -1 });
+  const todos = await Todo.find().sort({ createdAt: 1 });
   res.json(todos);
 });
 
