@@ -16,7 +16,7 @@ export default function TodoList() {
   const addTodo = () => {
     if (!task.trim()) return;
     axios.post(API_URL, { task }).then((res) => {
-      setTodos([...todos, res.data]);
+      setTodos([res.data, ...todos]);
       setTask("");
     });
   };
